@@ -1,22 +1,29 @@
-import './App.css'
-import { MyFirstComponent } from './components/MyFirstComponent'
+import { useState } from 'react';
+import './App.css';
+import { Child } from './components/child';
+import { FourthComponent } from './components/FourthComponent';
 
 function App() {
- 
+
+  const [name, setName] = useState("Wendy Katherinne Gomez Villa");
+
   return (
-    <>
-      <MyFirstComponent />
-      <h1>Fundamentos de React</h1>
-      <ul>
-        <li>Componentes</li>
-        <li>Eventos</li>
-        <li>Estados Hooks</li>
-        <li>Props</li>
-        <li></li>
-        <li></li>
-      </ul>
-    </>
+    <div className="App">
+      <header className="App-header">
+        <hr className='white-hr'/>
+        <FourthComponent />
+        <hr className='white-hr'/>
+        <Child
+          name={name}
+          setName={setName}
+        />
+        <hr className='white-hr'/>
+      </header>
+    </div>
   )
-}
+};
 
 export default App
+
+
+
